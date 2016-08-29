@@ -1,0 +1,20 @@
+{{set . "title" "New Post"}}
+{{append . "moreScripts" "/js/tinymce/tinymce.min.js"}}
+{{append . "moreScripts" "/js/wysiwyg.js"}}
+{{append . "moreStyles" "/css/new-post.css"}}
+{{template "header.html" .}}
+
+<div class="container">
+    <h2 class="post-header">Add a new post</h2>
+    <form method="post" action="/post/new">
+        <input class="input" type="text" placeholder="Enter title here" name="post.Title" />
+        <textarea class="wysiwyg" name="post.Content">Enter new post here</textarea>
+        <ul class="pager">
+            <li class="next">
+                <input type="submit" value="Publish"/>
+            </li>
+        </ul>
+    </form>
+</div>
+
+{{template "footer.html" .}}
